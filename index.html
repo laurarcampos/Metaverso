@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PIT STOP METAVERSO</title>
+    <style>
+         @font-face {
+            font-family: 'HK Modular';
+            src: url('fonts/Modular/Modular.ttf') format('truetype'); 
+            font-weight: bold;
+            font-style: normal;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('Apresentação\ Metaverso.png') no-repeat center center; 
+            background-size: contain;
+        }
+        .countdown {
+            font-family: 'HK Modular';
+            font-weight: bolder;
+            position: relative;
+            font-size: 115px;
+            color: white;
+            margin-top: 25%;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="countdown" id="countdown"></div>
+    <script>
+        // Defina a data de destino
+        var countDownDate = new Date("July 08, 2024 20:30:59").getTime();
+
+        // Atualize a contagem a cad    a segundo
+        var x = setInterval(function() {
+            var now = new Date().getTime();
+            var distance = countDownDate - now;
+
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown").innerHTML = days + "D " + hours + "H "
+            + minutes + "M " + seconds + "S ";
+
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "EXPIRADO";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
