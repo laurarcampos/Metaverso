@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PIT STOP METAVERSO</title>
     <style>
-         @font-face {
+        @font-face {
             font-family: 'HK Modular';
-            src: url('fonts/Modular/Modular.ttf') format('truetype'); 
+            src: url('fonts/Modular/Modular.ttf') format('truetype');
             font-weight: bold;
             font-style: normal;
         }
@@ -16,27 +16,35 @@
             padding: 0;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-end; /* Alinha os itens no fundo da tela */
             height: 100vh;
-            background: url('Apresentação\ Metaverso.png') no-repeat center center; 
+            background: url('Apresentação Metaverso.png') no-repeat center center;
             background-size: contain;
-        }
-            @media (max-width: 768px) {
-            body {
-                background-size: 100% 100%; 
-            }
         }
         .countdown {
             font-family: 'HK Modular';
             font-weight: bolder;
-            position: relative;
-            font-size: 115px;
             color: white;
-            margin-top: 25%;
-                
-            @media (max-width: 768px) {
-                font-size: 60px; 
-                margin-top: 100%;
+            font-size: 10vw; /* Tamanho da fonte baseado na largura da tela */
+            text-align: center;
+            margin-bottom: 10vh; /* Margem inferior para ajustar a posição vertical */
+        }
+        @media (max-width: 768px) {
+            .countdown {
+                font-size: 15vw; /* Ajuste do tamanho da fonte para telas menores */
+                margin-bottom: 20vh; /* Ajuste da margem inferior para telas menores */
+            }
+        }
+        @media (min-width: 769px) and (max-width: 1200px) {
+            .countdown {
+                font-size: 8vw; /* Ajuste do tamanho da fonte para telas médias */
+                margin-bottom: 15vh;
+            }
+        }
+        @media (min-width: 1201px) {
+            .countdown {
+                font-size: 6vw; /* Ajuste do tamanho da fonte para telas grandes */
+                margin-bottom: 12vh;
             }
         }
     </style>
