@@ -19,7 +19,12 @@
             align-items: flex-end; /* Alinha os itens no fundo da tela */
             height: 100vh;
             background: url('Apresentação Metaverso.png') no-repeat center center;
-            background-size: contain;
+            background-size: contain; /* Mantém a proporção na tela grande */
+        }
+        @media (max-width: 768px) {
+            body {
+                background-size: cover; /* Cobre a tela toda em dispositivos móveis */
+            }
         }
         .countdown {
             font-family: 'HK Modular';
@@ -52,7 +57,7 @@
 <body>
     <div class="countdown" id="countdown"></div>
     <script>
-        var countDownDate = new Date("Jun 28, 2024 19:30:00").getTime();
+        var countDownDate = new Date("Jun 29, 2024 19:30:00").getTime();
 
         var x = setInterval(function() {
             var now = new Date().getTime();
