@@ -16,40 +16,50 @@
             padding: 0;
             display: flex;
             justify-content: center;
-            align-items: flex-end; /* Alinha os itens no fundo da tela */
+            align-items: center;
             height: 100vh;
-            background: url('Apresentação Metaverso.png') no-repeat center center;
-            background-size: contain; /* Mantém a proporção na tela grande */
-        }
-        @media (max-width: 768px) {
-            body {
-                background-size: cover; /* Cobre a tela toda em dispositivos móveis */
-            }
+            background: url('Fundo.gif') no-repeat center center;
+            background-size: cover; /* Cobre a tela inteira */
+            overflow: hidden; /* Impede a rolagem */
         }
         .countdown {
             font-family: 'HK Modular';
             font-weight: bolder;
             color: white;
-            font-size: 10vw; /* Tamanho da fonte baseado na largura da tela */
+            font-size: 20vw; /* Tamanho da fonte para telas grandes */
             text-align: center;
-            margin-bottom: 10vh; /* Margem inferior para ajustar a posição vertical */
+            margin-left: 70%;
+            background-color: rgba(43, 44, 40, 0.8); /* Fundo semi-transparente */
+            padding: 20px;
+            border-radius: 6px;
         }
+        /* Ajustes para dispositivos móveis */
         @media (max-width: 768px) {
+            body {
+                background: url('Cronograma.gif') no-repeat center center;
+                background-size: cover; /* Cobre a tela inteira na vertical */
+            }
             .countdown {
-                font-size: 15vw; /* Ajuste do tamanho da fonte para telas menores */
-                margin-bottom: 20vh; /* Ajuste da margem inferior para telas menores */
+                font-size: 10vw; /* Tamanho da fonte reduzido para telas menores */
+                margin-left: 0;
+                margin-top: 80vh; /* Ajusta a posição do texto para o inferior em dispositivos móveis */
+                transform: translateY(-50%);
+                padding: 10px;
+                width: 80%; /* Ajusta a largura para se adaptar melhor em telas pequenas */
+                background-color: rgba(43, 44, 40, 0.8); /* Fundo semi-transparente */
             }
         }
+        /* Ajustes para telas médias */
         @media (min-width: 769px) and (max-width: 1200px) {
             .countdown {
-                font-size: 8vw; /* Ajuste do tamanho da fonte para telas médias */
-                margin-bottom: 15vh;
+                font-size: 8vw;
             }
         }
+        /* Ajustes para telas grandes com rotação de texto */
         @media (min-width: 1201px) {
             .countdown {
-                font-size: 6vw; /* Ajuste do tamanho da fonte para telas grandes */
-                margin-bottom: 12vh;
+                font-size: 6vw;
+                transform: rotate(270deg); /* Rotaciona o texto em 270 graus */
             }
         }
     </style>
@@ -57,7 +67,7 @@
 <body>
     <div class="countdown" id="countdown"></div>
     <script>
-        var countDownDate = new Date("July 08, 2024 20:30:00").getTime();
+        var countDownDate = new Date("July 15, 2024 20:30:00").getTime();
 
         var x = setInterval(function() {
             var now = new Date().getTime();
