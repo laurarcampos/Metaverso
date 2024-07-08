@@ -37,11 +37,13 @@
         @media (max-width: 768px) {
             body {
                 background: url('Cronograma.gif') no-repeat center center;
+                background-size: contain; /* Cobre a tela inteira na vertical */
                 background-size: cover; /* Cobre a tela inteira na vertical */
             }
             .countdown {
                 font-size: 10vw; /* Tamanho da fonte reduzido para telas menores */
                 margin-left: 0;
+                margin-top: 67vh; /* Ajusta a posição do texto para o inferior em dispositivos móveis */
                 margin-top: 80vh; /* Ajusta a posição do texto para o inferior em dispositivos móveis */
                 transform: translateY(-50%);
                 padding: 10px;
@@ -68,19 +70,15 @@
     <div class="countdown" id="countdown"></div>
     <script>
         var countDownDate = new Date("July 15, 2024 20:30:00").getTime();
-
         var x = setInterval(function() {
             var now = new Date().getTime();
             var distance = countDownDate - now;
-
             var days = Math.floor(distance / (1000 * 60 * 60 * 24));
             var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
             document.getElementById("countdown").innerHTML = days + "D " + hours + "H "
             + minutes + "M " + seconds + "S ";
-
             if (distance < 0) {
                 clearInterval(x);
                 document.getElementById("countdown").innerHTML = "VAMOS LÁ";
